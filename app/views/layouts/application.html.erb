@@ -12,6 +12,7 @@
       <% else %>
         <%= link_to "Sign up", new_user_registration_path, class: 'navbar-link'  %> |
         <%= link_to "Login", new_user_session_path, class: 'navbar-link'  %>
+        <%= link_to "Check Mailbox",letter_opener_web_path, class: 'navbar-link'  %>
       <% end %>
     </p>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
