@@ -1,6 +1,3 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
-
 <p id="notice"><%= notice %></p>
 
 <h1><%= User.model_name.human %></h1>
@@ -8,10 +5,9 @@
 <table>
   <thead>
   <tr>
-    <th><%= User.human_attribute_name(:title) %></th>
-    <th><%= User.human_attribute_name(:memo) %></th>
-    <th><%= User.human_attribute_name(:author) %></th>
-    <th><%= User.human_attribute_name(:picture) %></th>
+    <th><%= User.human_attribute_name(:id) %></th>
+    <th><%= User.human_attribute_name(:email) %></th>
+    <th><%= User.human_attribute_name(:details) %></th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -28,7 +24,3 @@
 </table>
 
 <%= paginate @users %>
-
-<br>
-
-<%= link_to t('views.common.new'), new_book_path %>
