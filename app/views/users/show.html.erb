@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<% if user_signed_in? && @users == current_user %>
+  <h1>マイページ</h1>
+<% else %>
+  <h1>ユーザーページ</h1>
+<% end %>
+<p>
+  <strong><%= User.human_attribute_name(:email) %>:</strong>
+  <%= @users.email %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:post_code) %>:</strong>
+  <%= @users.post_code %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:address) %>:</strong>
+  <%= @users.address %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:self_introduction) %>:</strong>
+  <%= @users.self_introduction %>
+</p>
+
+<% if user_signed_in? && @users == current_user %>
+  <%= link_to "プロフィール編集", edit_user_path(current_user) %>
+<% end %>
+<%= link_to t('views.common.back'), users_path %>

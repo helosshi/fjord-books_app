@@ -1,0 +1,22 @@
+<h1>プロフィール編集</h1>
+
+<%= form_with model: @users do |form| %>
+  <div class="field">
+    <strong><%= User.human_attribute_name(:email) %>:</strong>
+    <%= form.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+  <div>
+    <strong><%= User.human_attribute_name(:post_code) %>:</strong>
+    <%= form.text_field :post_code %>
+  </div>
+  <div>
+    <strong><%= User.human_attribute_name(:address) %>:</strong>
+    <%= form.text_field :address %>
+  </div>
+  <div>
+    <strong><%= User.human_attribute_name(:self_introduction) %>:</strong>
+    <%= form.text_area :self_introduction %>
+  </div>
+  <p>メールアドレス変更後は認証メールを確認してください</p>
+  <div><%= form.submit "保存" %></div>
+<% end %>
